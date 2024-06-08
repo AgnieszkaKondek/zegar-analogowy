@@ -1,0 +1,87 @@
+{% load multiply %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Analog Clock</title>
+    <style>
+        .clock {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            border: 5px solid black;
+            border-radius: 50%;
+            background-color: white;
+            margin: auto;
+            margin-top: 50px;
+        }
+        .hand {
+            position: absolute;
+            height: 2px;
+            background: black;
+            top: 50%;
+            transform-origin: 100%;
+            transform: rotate(90deg);
+        }
+        .hour-hand {
+            width: 30%;
+            margin-left: 20%;
+            height: 1px;
+        }
+        .minute-hand {
+            height: 2px;
+            width: 45%;
+            margin-left: 5%;
+        }
+        .second-hand {
+            height: 1px;
+            background: red;
+            width: 50%;
+        }
+        .number {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 16px;
+        }
+        .number1  { top: 15px; left: 142px; }
+        .number2  { top: 38px; left: 163px; }
+        .number3  { top: 85px; left: 175px; }
+        .number4  { top: 132px; left: 163px; }
+        .number5  { top: 155px; left: 142px; }
+        .number6  { top: 165px; left: 90px;  }
+        .number7  { top: 155px; left: 38px;  }
+        .number8  { top: 132px; left: 17px;  }
+        .number9  { top: 85px; left: 5px;    }
+        .number10 { top: 38px; left: 17px;   }
+        .number11 { top: 15px; left: 38px;   }
+        .number12 { top: 5px;  left: 90px;   }
+    </style>
+</head>
+<body>
+    <div class="clock">
+        <div class="hand hour-hand" style="transform: rotate({{ hour_angle }}deg);"></div>
+        <div class="hand minute-hand" style="transform: rotate({{ minute_angle }}deg);"></div>
+        <div class="hand second-hand" style="transform: rotate({{ second_angle }}deg);"></div>
+        <div class="number number1">1</div>
+        <div class="number number2">2</div>
+        <div class="number number3">3</div>
+        <div class="number number4">4</div>
+        <div class="number number5">5</div>
+        <div class="number number6">6</div>
+        <div class="number number7">7</div>
+        <div class="number number8">8</div>
+        <div class="number number9">9</div>
+        <div class="number number10">10</div>
+        <div class="number number11">11</div>
+        <div class="number number12">12</div>
+    </div>
+    <script>
+        setInterval(function() {
+            location.reload();
+        }, 1000);
+    </script>
+</body>
+</html>
